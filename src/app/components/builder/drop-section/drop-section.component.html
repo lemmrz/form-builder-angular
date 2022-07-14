@@ -1,0 +1,49 @@
+<section class="section">
+  <div class="drop-area-container">
+    <ng-template *ngIf="formTitle$ | async as formTitle">
+      <app-title [formTitle]="formTitle"></app-title>
+    </ng-template>
+
+    <ng-container *ngIf="formStyles$ | async as formStyles">
+      <form
+        class="drop-area"
+        cdkDropList
+        [cdkDropListData]="formElements$ | async"
+        (cdkDropListDropped)="drop($event)"
+        [ngStyle]="{
+          width: formStyles.width,
+          minHeight: formStyles.height,
+          borderStyle: formStyles.borderStyle,
+          borderWidth: formStyles.borderWidth,
+          borderColor: formStyles.borderColor,
+          backgroundColor: formStyles.backgroundColor
+        }"
+      >
+        <div
+          class="drop-area__list"
+          *ngFor="
+            let el of formElements$ | async;
+            index as i;
+            trackBy: trackElChanges
+          "
+          (click)="onElementClick(el)"
+          cdkDrag
+        >
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          <app-form-element [element]="el"></app-form-element>
+        </div>
+      </form>
+    </ng-container>
+  </div>
+
+  <div class="btn-container">
+    <button class="green-btn btn-150" (click)="createForm()" mat-raised-button>
+      Create form
+    </button>
+    <button class="btn-150" (click)="clearElements()" mat-raised-button color="primary">Clear</button>
+  </div>
+
+  <div *ngIf="isFormCreated">
+    <textarea [value]="createdFormHtml"></textarea>
+  </div>
+</section>

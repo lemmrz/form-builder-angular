@@ -1,0 +1,43 @@
+@import "../../../../common/colors.scss";
+
+.drop-area__element {
+  margin-bottom: 10px;
+}
+
+.drop-area__input {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.drop-area__button {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+
+  .drop-area__checkbox {
+    margin-bottom: 5px;
+  }
+}
+
+.hideBottomBorder {
+  border-bottom: hidden !important;
+}
+
+.hideTopBorder {
+  border-top: hidden !important;
+}
+
+.hideLeftBorder {
+  border-left: hidden !important;
+}
+
+.hideRightBorder {
+  border-right: hidden !important;
+}
+
+
+.drop-area__checkbox {
+scale: 2;
+}

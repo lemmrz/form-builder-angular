@@ -1,0 +1,89 @@
+<form class="form-group" [formGroup]="customFormGroup" novalidate>
+  <mat-form-field class="form-group__field">
+    <mat-label for="width">Width</mat-label>
+    <input
+      class="form-group__input"
+      id="width"
+      type="text"
+      formControlName="width"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label for="height">Height</mat-label>
+    <input
+      class="form-group__input"
+      id="height"
+      type="text"
+      formControlName="height"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label for="fontSize">Font Size</mat-label>
+    <input
+      class="form-group__input"
+      id="fontSize"
+      type="text"
+      formControlName="fontSize"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label form="fontWeight">Font weight</mat-label>
+    <mat-select id="fontWeight" name="fontWeight" formControlName="fontWeight">
+      <mat-option *ngFor="let weight of fontWeightGrade" value="{{ weight }}">{{
+        weight
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label for="borderWidth">Border Width</mat-label>
+    <input
+      class="form-group__input"
+      id="borderWidth"
+      type="text"
+      formControlName="borderWidth"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label for="backgroundColor">Background Color</mat-label>
+    <input
+      name="backgroundColor"
+      class="color"
+      type="color"
+      formControlName="backgroundColor"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label for="borderColor">Border Color</mat-label>
+    <input
+      name="borderColor"
+      class="color"
+      type="color"
+      formControlName="borderColor"
+      matInput
+    />
+  </mat-form-field>
+
+  <mat-form-field class="form-group__field">
+    <mat-label>Text Color</mat-label>
+    <input
+      formControlName="textColor"
+      class="color"
+      id="color"
+      type="color"
+      matInput
+    />
+  </mat-form-field>
+
+  <app-border-input formControlName="borderControl"></app-border-input>
+</form>

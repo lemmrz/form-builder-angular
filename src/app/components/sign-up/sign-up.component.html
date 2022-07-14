@@ -1,0 +1,39 @@
+<div class="signup-form">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <mat-form-field class="form-field">
+        <mat-label for="username">Email</mat-label>
+        <input
+          class="input"
+          id="email"
+          type="text"
+          formControlName="email"
+          matInput
+        />
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label for="password">Password</mat-label>
+        <input
+          class="input"
+          id="password"
+          formControlName="password"
+          autocomplete="on"
+          matInput
+        />
+      </mat-form-field>
+
+      <label for="sig-up"></label>
+      <button
+        class="button sign-up-btn"
+        id="sign-up"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="signUpForm.invalid"
+      >
+        Confirm
+      </button>
+    </div>
+  </form>
+</div>

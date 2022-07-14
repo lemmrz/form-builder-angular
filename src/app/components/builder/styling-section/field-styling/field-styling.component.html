@@ -1,0 +1,28 @@
+<div class="style-section">
+  <app-input-styling-form
+    *ngIf="element.type === 'input' || element.type === 'textarea'"
+    [element]="element"
+    [customFormGroup]="styleFormGroup"
+  ></app-input-styling-form>
+
+  <app-button-styling-form
+    *ngIf="element.type === 'button'"
+    [element]="element"
+    [customFormGroup]="styleFormGroup"
+  >
+  </app-button-styling-form>
+
+  <app-select-styling-form
+    *ngIf="element.type === 'select'"
+    [element]="element"
+    [customFormGroup]="styleFormGroup"
+  >
+  </app-select-styling-form>
+
+  <app-checkbox-styling-form
+    *ngIf="element.type === 'checkbox'"
+    [element]="element"
+    [customFormGroup]="styleFormGroup"
+  >
+  </app-checkbox-styling-form>
+</div>

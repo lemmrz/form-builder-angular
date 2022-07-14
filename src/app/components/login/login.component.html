@@ -1,0 +1,59 @@
+<div class="login-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login-form-container">
+      <mat-form-field class="login-form__field">
+        <mat-label for="username">Email</mat-label>
+        <input
+          class="input"
+          id="email"
+          type="text"
+          formControlName="email"
+          matInput
+        />
+      </mat-form-field>
+
+      <mat-form-field class="login-form__field">
+        <mat-label for="password">Password</mat-label>
+        <input
+          class="input"
+          id="password"
+          type="password"
+          formControlName="password"
+          autocomplete="on"
+          matInput
+        />
+      </mat-form-field>
+
+      <ng-container *ngIf="errorMessage$ | async as errorMessage">
+        <div class="error-container">
+          <mat-error>{{ errorMessage | authErrorMessage }}</mat-error>
+        </div>
+      </ng-container>
+
+      <label for="log-in"></label>
+      <button
+        class="button"
+        id="log-in"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Log in
+      </button>
+
+      <label for="sig-up"></label>
+      <button
+        class="button sign-up-btn"
+        routerLink="/sign-up"
+        id="sign-up"
+        mat-raised-button
+        color="primary"
+      >
+        Sign up
+      </button>
+    </div>
+  </form>
+  <!--
+  <button (click)="logErrors()">Log</button> -->
+</div>

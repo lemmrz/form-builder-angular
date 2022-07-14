@@ -1,0 +1,58 @@
+<div class="drop-area__element" *ngIf="element.type === 'input'">
+  <input
+    class="drop-area__input"
+    placeholder="{{ element.placeholderText }}"
+    [ngStyle]="getElementStyles()"
+    [ngClass]="hideBorders()"
+    required="{{ element.required }}"
+    [ngModel]="inputValue"
+    #input = "ngModel"
+  />
+  <mat-error *ngIf="input.invalid && (input.dirty || input.touched)" class="allert">Field is required</mat-error>
+</div>
+
+<div class="drop-area__element" *ngIf="element.type === 'textarea'">
+  <textarea
+    class="drop-area__input"
+    placeholder="{{ element.placeholderText }}"
+    [ngStyle]="getElementStyles()"
+    [ngClass]="hideBorders()"
+    required="{{ element.required }}"
+  ></textarea>
+</div>
+
+<div class="drop-area__element" *ngIf="element.type === 'button'">
+  <label for="button"></label>
+  <button
+    class="drop-area__button"
+    id="button"
+    name="button"
+    [ngStyle]="getElementStyles()"
+    [ngClass]="hideBorders()"
+  >
+    Button
+  </button>
+</div>
+
+<div class="drop-area__element" *ngIf="element.type === 'checkbox'">
+  <mat-checkbox
+    [ngStyle]="getElementStyles()"
+    [color]="element.checkboxStyle"
+    class="drop-area__checkbox"
+    >{{ element.labelText }}</mat-checkbox
+  >
+</div>
+
+<div class="drop-area__element" *ngIf="element.type === 'select'">
+  <label for="select"></label>
+  <select
+    class="drop-area__input"
+    id="select"
+    name="select"
+    [ngStyle]="getElementStyles()"
+    [ngClass]="hideBorders()"
+  >
+    <option value="one">First option</option>
+    <option value="two">Second option</option>
+  </select>
+</div>

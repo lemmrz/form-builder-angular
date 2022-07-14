@@ -1,0 +1,29 @@
+@import "../../../common/colors.scss";
+
+.section {
+  height: 100%;
+
+  .accordition {
+    display: block;
+
+    .accordition__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: 7px;
+
+      .header {
+        margin: 0;
+      }
+
+      .arrow-icon {
+        font-size: 0.8 rem;
+      }
+    }
+  }
+}
+
+.element-styling-container {
+  margin: 0 10px;
+}

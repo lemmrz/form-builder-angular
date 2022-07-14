@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="header__logo" routerLink="/">Form Builder</div>
+  <div class="btn-username-container">
+    <ng-container *ngIf="authData$ | async as authData">
+      <div class="username">{{ authData.email }}</div>
+    </ng-container>
+    <a
+      class="header__button"
+      routerLink="/login"
+      mat-stroked-button
+      color="primary"
+      *ngIf="isAuth$ | async"
+      (click)="logOut()"
+      >Log out</a
+    >
+  </div>
+</header>

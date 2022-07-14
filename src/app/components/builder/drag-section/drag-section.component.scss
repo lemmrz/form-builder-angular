@@ -1,0 +1,29 @@
+@import '../../../common/colors.scss';
+@import '../../../common/drag-drop-styles.scss';
+
+.section {
+  .section-container {
+
+    .dragable-items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+  }
+}
+
+.dragable-items__item  {
+  letter-spacing: 1.5px;
+  padding: 7px 15px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  border-bottom: $secondary-color 3px solid;
+  color: $font-primary;
+
+}
+
+
